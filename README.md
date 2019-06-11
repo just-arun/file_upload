@@ -67,6 +67,36 @@ Each file contains the following information:
 | buffer |	A Buffer of the entire file	| MemoryStorage |
 
 
+## options that can be passed to Multer.
+
+| Key |	Description |
+| --- | --- |
+| dest or storage | 	Where to store the files |
+| fileFilter |	Function to control which files are accepted |
+| limits |	Limits of the uploaded data |
+| preservePath |	Keep the full path of files instead of just the base name |
+
+
+## fileFilter
+Set this to a function to control which files should be uploaded and which should be skipped. The function should look like this:
+```js
+function fileFilter (req, file, cb) {
+ 
+  // The function should call `cb` with a boolean
+  // to indicate if the file should be accepted
+ 
+  // To reject this file pass `false`, like so:
+  cb(null, false)
+ 
+  // To accept the file pass `true`, like so:
+  cb(null, true)
+ 
+  // You can always pass an error if something goes wrong:
+  cb(new Error('I don\'t have a clue!'))
+ 
+}
+```
+
 ## Error handling
 When encountering an error, Multer will delegate the error to Express. You can display a nice error page using the standard express way.
 
