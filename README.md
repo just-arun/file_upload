@@ -38,7 +38,7 @@ app.post('/cool-profile', cpUpload, function (req, res, next) {
   // req.body will contain the text fields, if there were any
 })
 ```
-:::note
+::: success
 In case you need to handle a text-only multipart form, you should use the .none() method:
 :::
 ```js
