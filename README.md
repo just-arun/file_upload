@@ -55,7 +55,7 @@ app.post('/profile', upload.none(), function (req, res, next) {
 Each file contains the following information:
 
 | Key |	Description |	Note |
-| -- | -- |
+| -- | -- | -- |
 | fieldname	| Field name specified in the form	 | |
 | originalname |	Name of the file on the user's computer	| |
 | encoding |	Encoding type of the file	| |
