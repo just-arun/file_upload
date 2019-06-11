@@ -38,9 +38,9 @@ app.post('/cool-profile', cpUpload, function (req, res, next) {
   // req.body will contain the text fields, if there were any
 })
 ```
-::: success
-In case you need to handle a text-only multipart form, you should use the .none() method:
-:::
+
+> In case you need to handle a text-only multipart form, you should use the .none() method:
+
 ```js
 var express = require('express')
 var app = express()
@@ -75,6 +75,13 @@ Each file contains the following information:
 | fileFilter |	Function to control which files are accepted |
 | limits |	Limits of the uploaded data |
 | preservePath |	Keep the full path of files instead of just the base name |
+
+n an average web app, only dest might be required, and configured as shown in the following example.
+```js
+var upload = multer({ dest: 'uploads/' })
+```
+
+
 
 
 ## fileFilter
